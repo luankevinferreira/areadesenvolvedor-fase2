@@ -6,7 +6,6 @@ required:
   - creditDebitType
   - transactionIdentification
   - type
-  - additionalInfo
   - amount
   - transactionDate
   - payer
@@ -21,6 +20,7 @@ properties:
     maxLength: 60
     pattern: \w*\W*
     description: Campo livre que corresponde ao identificador da transação na instituição financeira
+    example: "TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"
   type:
     $ref: ../enum/EnumTransactionTypes.yaml
   additionalInfo:
@@ -46,14 +46,14 @@ properties:
   payer:
     type: string
     maxLength: 14
-    pattern: \d{14}|^NA$
+    pattern: ^\d{11}$|^\d{14}$|^NA$
     description: |
       Identificação do Pagador da transação (Preencher com o CPF ou CNPJ, sem formatação)
-    example: "3456798700"
+    example: "43908445778"
   payee:
     type: string
     maxLength: 14
-    pattern: \d{14}|^NA$
+    pattern: ^\d{11}$|^\d{14}$|^NA$
     description: |
       Identificação do Recebedor da transação (Preencher com o CPF ou CNPJ, sem formatação)
-    example: "2976798722"
+    example: "67890854360"
