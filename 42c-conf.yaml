@@ -1,4 +1,4 @@
 audit:
   discovery:
     search:
-      - '**/*.yaml'
+      - 'documentation/source/swagger/*_apis.yaml'
